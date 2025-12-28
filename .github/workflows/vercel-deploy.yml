@@ -20,7 +20,7 @@ jobs:
         run: npm install
 
       - name: Build Tailwind CSS
-        run: npm run start
+        run: npm run build
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
@@ -28,3 +28,4 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: "--prebuilt"
