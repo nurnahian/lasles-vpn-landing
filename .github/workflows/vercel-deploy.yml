@@ -1,4 +1,4 @@
-name: Deploy to Vercel
+name: Deploy Static Site to Vercel
 
 on:
   push:
@@ -16,11 +16,15 @@ jobs:
         with:
           node-version: 18
 
-      - run: npm install
-      - run: npm run build
+      - name: Install dependencies
+        run: npm install
 
-      - uses: amondnet/vercel-action@v25
+      - name: Build Tailwind CSS
+        run: npm run build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_USER_ID }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
