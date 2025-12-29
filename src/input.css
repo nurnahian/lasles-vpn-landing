@@ -11,5 +11,19 @@
   .section-container {
     @apply max-w-[1440px] container mx-auto px-4 py-12;
   }
-  
+}
+
+.swiper-pagination-bullet{
+  width: 15px;
+  height: 15px;
+  background: #DDE0E4;
+  opacity: 1;
+  margin: 0 5px !important;
+}
+
+.swiper-pagination-bullet-action{
+  background: var(--color-primary);
+  opacity: 1;
+  transform: scale(1.2);
+  transition: transform 0.2s;
 }
