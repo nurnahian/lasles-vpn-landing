@@ -27,3 +27,6 @@
   transform: scale(1.2);
   transition: transform 0.2s;
 }
+.swiper-navigation-icon {
+  display: none !important;
+}
